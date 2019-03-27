@@ -10,5 +10,22 @@ module.exports = {
     historyApiFallback: true,//不跳转
     inline: true,//实时刷新
 	port:8089,
-  } 
+  },
+	// 加载器配置
+   module:{
+	   rules: [
+		//编译es6->es5：babel(babel-loader,babel-core,babel-preset-env)
+            {
+                test:/\.js$/,
+                exclude:__dirname+'/node_modules',
+                use:{
+                    loader:'babel-loader',
+                    // 配置loader选项
+                    options:{
+                        presets:['env','stage-3'], //编译ES6->ES5
+                    }
+                }
+            },
+	   ]
+   } 
 }
