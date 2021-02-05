@@ -10,3 +10,4 @@ dist/
 *.rm
 *.wav
 *.avi
+/package-lock.json

@@ -4,7 +4,7 @@ module.exports = function() {
   greet.textContent = "Hi!"+foo();
   function foo(){
 	  let map = new Map();
-	  map.set('a','--min demo text of webpack！');
+    map.set('a','--min demo text of webpack！');
 	  return map.get('a');
   }
   return greet;
