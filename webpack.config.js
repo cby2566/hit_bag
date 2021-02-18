@@ -52,6 +52,15 @@ module.exports = {
           },
         ],
       },
+      {
+        // 处理普通的css
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+        /**
+         * css-loader会处理 import / require（） @import / url 引入的内容, 将其转换为一个数组
+         * style-loader 来处理这个被转换的数据，变成<style>标签插入
+         */
+      }
     ]
   },
   plugins:[ htmlPlugin ]
