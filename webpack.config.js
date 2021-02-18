@@ -1,3 +1,16 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+//创建 html-webpack-plugin 对象
+const htmlPlugin = new HtmlWebpackPlugin({
+  //设置生成预览页面的模板文件
+  template:"./public/index.html",
+  //设置生成的预览页面名称
+  filename:"index.html"
+  /* TODO：打包时自动生产一个index.html并帮你引入bundle.js
+  * 也可以指定模板，其html结构会被保留
+  * npm i --save-dev html-webpack-plugin@4
+  */ 
+})
+
 module.exports = {
   entry: __dirname + "/app/main.js",//已多次提及的唯一入口文件
   output: {
@@ -40,5 +53,6 @@ module.exports = {
         ],
       },
     ]
-  }
+  },
+  plugins:[ htmlPlugin ]
 }
