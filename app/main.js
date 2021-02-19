@@ -17,3 +17,12 @@ let red_span = document.createElement('span');
 red_span.classList.add('span1');
 red_span.innerHTML = "<br>红";
 document.querySelector("#root").appendChild(red_span);
+
+// 引入sass进行编译
+// 注意npm上直接安装是版本11+，需要控制到7.x版本
+import scss from './src/resources/style/css_plus.scss';
+let blue_span = document.createElement('span');
+blue_span.classList.add('span2');
+blue_span.classList.add('span3');
+blue_span.innerHTML = "蓝";
+document.querySelector("#root").appendChild(blue_span);

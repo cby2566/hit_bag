@@ -60,7 +60,23 @@ module.exports = {
          * css-loader会处理 import / require（） @import / url 引入的内容, 将其转换为一个数组
          * style-loader 来处理这个被转换的数据，变成<style>标签插入
          */
-      }
+      },
+      {
+        // 处理预编译的css
+        // 处理sass
+        test: /\.s[ac]ss$/i,
+        use: [
+          // 将 JS 字符串生成为 style 节点
+          "style-loader",
+          // 将 CSS 转化成 CommonJS 模块
+          "css-loader",
+          // 将 Sass 编译成 CSS
+          "sass-loader",
+        ],
+        // npm install --save-dev sass
+        // npm install --save-dev sass-loader@7.x
+        // 注意安装的版本
+      },
     ]
   },
   plugins:[ htmlPlugin ]
