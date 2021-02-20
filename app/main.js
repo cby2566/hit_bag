@@ -26,3 +26,31 @@ blue_span.classList.add('span2');
 blue_span.classList.add('span3');
 blue_span.innerHTML = "蓝";
 document.querySelector("#root").appendChild(blue_span);
+
+// 使用最简单的模式构建vue, 和他的组件
+/**
+ * 我在 webpack.config 里添加resolve属性，
+ * 用来处理 import Vue from "vue" ， 解析为 import Vue from "vue/dist/vue.esm.js"
+ * 
+ * 我在 package.json 里修改了 main 属性的指向
+ *  */ 
+import Vue from "vue"
+Vue.component('kkk', {
+    props: ['title'],
+    template: '<h3>{{ title }}</h3>'
+  })
+new Vue({
+  data: ()=>{
+    return {
+      message: 'Hello Vue!',
+      title: 7777
+    }
+  },
+  mounted(){this.getTime()},
+  methods:{
+    getTime(){
+      setInterval(()=>{ this.title++; }, 2000);
+    }
+  },
+  template:'<div>{{ message }} <kkk :title="title" /> </div>'
+}).$mount('#vue')

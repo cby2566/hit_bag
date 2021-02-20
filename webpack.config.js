@@ -14,8 +14,8 @@ const htmlPlugin = new HtmlWebpackPlugin({
 module.exports = {
   entry: __dirname + "/app/main.js",//已多次提及的唯一入口文件
   output: {
-    path: __dirname + "/dist",//打包后的文件存放的地方
-    filename: "bundle.js"//打包后输出文件的文件名
+    path: __dirname + "/testOut",//打包后的文件存放的地方
+    filename: "bundle7.js"//打包后输出文件的文件名
   },
 
   devServer: {
@@ -79,5 +79,10 @@ module.exports = {
       },
     ]
   },
-  plugins:[ htmlPlugin ]
+  plugins:[ htmlPlugin ],
+  resolve: {
+    alias: {
+        'vue$': 'vue/dist/vue.esm.js' //内部为正则表达式  vue结尾的
+    }
+  }
 }

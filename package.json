@@ -2,7 +2,7 @@
   "name": "webpack4",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "testOut/bundle7.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
@@ -26,5 +26,8 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "vue": "^2.6.12"
   }
 }
