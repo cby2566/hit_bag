@@ -10,6 +10,10 @@ const htmlPlugin = new HtmlWebpackPlugin({
   * npm i --save-dev html-webpack-plugin@4
   */ 
 })
+/**
+ * 导入vue单文件组件插件
+ */
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   entry: __dirname + "/app/main.js",//已多次提及的唯一入口文件
@@ -77,9 +81,17 @@ module.exports = {
         // npm install --save-dev sass-loader@7.x
         // 注意安装的版本
       },
+      {
+        // 处理vue单文件组件
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      }
     ]
   },
-  plugins:[ htmlPlugin ],
+  plugins:[ 
+    htmlPlugin,
+    new VueLoaderPlugin(), // 请确保引入这个插件！
+   ],
   resolve: {
     alias: {
         'vue$': 'vue/dist/vue.esm.js' //内部为正则表达式  vue结尾的

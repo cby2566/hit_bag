@@ -35,11 +35,15 @@ document.querySelector("#root").appendChild(blue_span);
  * 我在 package.json 里修改了 main 属性的指向
  *  */ 
 import Vue from "vue"
+import single3 from "./src/component/simpleVue.vue"
 Vue.component('kkk', {
     props: ['title'],
     template: '<h3>{{ title }}</h3>'
   })
 new Vue({
+  components:{
+    single3
+  },
   data: ()=>{
     return {
       message: 'Hello Vue!',
@@ -52,5 +56,5 @@ new Vue({
       setInterval(()=>{ this.title++; }, 2000);
     }
   },
-  template:'<div>{{ message }} <kkk :title="title" /> </div>'
+  template:'<div>{{ message }} <kkk :title="title" /> <single3/> </div>'
 }).$mount('#vue')
