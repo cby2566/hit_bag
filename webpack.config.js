@@ -96,9 +96,9 @@ module.exports = {
     htmlPlugin,
     new VueLoaderPlugin(), // 请确保引入这个插件！
    ],
-  // resolve: {
-  //   alias: {
-  //       'vue$': 'vue/dist/vue.esm.js' //内部为正则表达式  vue结尾的
-  //   }
-  // }
+  resolve: {
+    alias: {
+        'vue$': 'vue/dist/vue.esm.js' //内部为正则表达式  vue结尾的
+    }
+  }
 }
