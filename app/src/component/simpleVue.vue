@@ -1,5 +1,7 @@
 <template>
-  <div class="example">{{ msg }}</div>
+  <div class="example">
+    <el-button type="primary">{{ msg }}</el-button>
+  </div>
 </template>
 
 <script>

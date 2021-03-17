@@ -20,7 +20,7 @@ document.querySelector("#root").appendChild(red_span);
 
 // 引入sass进行编译
 // 注意npm上直接安装是版本11+，需要控制到7.x版本
-import scss from './src/resources/style/css_plus.scss';
+import  './src/resources/style/css_plus.scss';
 let blue_span = document.createElement('span');
 blue_span.classList.add('span2');
 blue_span.classList.add('span3');
@@ -36,25 +36,17 @@ document.querySelector("#root").appendChild(blue_span);
  *  */ 
 import Vue from "vue"
 import single3 from "./src/component/simpleVue.vue"
-Vue.component('kkk', {
-    props: ['title'],
-    template: '<h3>{{ title }}</h3>'
-  })
+
+// 引入element3
+// import ElementPlus from 'element-plus';
+// import 'element-plus/lib/theme-chalk/index.css';
+// Vue.use(ElementPlus)
+
+// 引入element2
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI)
+
 new Vue({
-  components:{
-    single3
-  },
-  data: ()=>{
-    return {
-      message: 'Hello Vue!',
-      title: 7777
-    }
-  },
-  mounted(){this.getTime()},
-  methods:{
-    getTime(){
-      setInterval(()=>{ this.title++; }, 2000);
-    }
-  },
-  template:'<div>{{ message }} <kkk :title="title" /> <single3/> </div>'
+  render: h => h(single3)
 }).$mount('#vue')
