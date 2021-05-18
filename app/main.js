@@ -8,11 +8,13 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI)
 
 import VueRouter from 'vue-router'
+const main4 = { template: '<div>main</div>' }
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
 
 
 const routes = [
+  { path: '/', component: main4 },
   { path: '/foo', component: Foo },
   { path: '/bar', component: Bar }
 ]
